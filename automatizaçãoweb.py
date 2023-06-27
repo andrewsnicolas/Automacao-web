@@ -3,8 +3,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-import pyautogui
-import requests
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 serviço = Service(ChromeDriverManager().install())
@@ -25,15 +23,3 @@ navegador.find_element(By.XPATH, '//*[@id="login"]/form/div[5]/input').click()
 
 navegador.get('https://suap.ifsp.edu.br/edu/emitir_boletim_pdf/1038842/')
 #Gera o link do boletim do aluno
-
-#retorno = requests.get('https://suap.ifsp.edu.br/edu/emitir_boletim_pdf/1038842/')
-#Com o requests, nós pegamos todo o conteúdo html do nosso site
-#with open('meu_boletim.pdf', "wb") as arquivo:
-#com o with, transformamos o conteúdo em um arquivo binário para formarmos um pdf
-       # arquivo.write(retorno.content) 
-
-
-
-#navegador.find_element(By.XPATH, '/html/body/pdf-viewer//viewer-toolbar//div/div[3]/viewer-download-controls//cr-icon-button//div/iron-icon').click()
-#Baixa o arquivo
-#with open('cleiton.txt')
